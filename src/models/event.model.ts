@@ -30,12 +30,14 @@ interface VenueModel {
   longitude: string;
 }
 
+interface OffersModel {
+  type: string;
+  url: string;
+  status: string;
+}
+
 class EventModel {
-  offers: {
-    type: string;
-    url: string;
-    status: string;
-  }[];
+  offers: OffersModel[];
   venue: VenueModel;
   starts_at: number;
   artist: ArtistModel;
@@ -78,27 +80,27 @@ class EventModel {
     this.festival_end_date = obj.festival_end_date;
 
     //  computed properties
-    this.hasVip = this._findVipTickets();
-    this.amount = this._getRandomAmount();
+    this.hasVip = _findVipTickets(this.offers);
+    this.amount = _getRandomAmount();
   }
+}
 
-  // checking if VIP tickets are available
-  private _findVipTickets() {
-    const vipTickets = this.offers.filter(
-      ({ type, status }) => type === 'VIP' && status === 'available'
-    );
-    return vipTickets?.length > 0;
-  }
+// checking if VIP tickets are available
+function _findVipTickets(offers: OffersModel[]) {
+  const vipTickets = offers.filter(
+    ({ type, status }) => type === 'VIP' && status === 'available'
+  );
+  return vipTickets?.length > 0;
+}
 
-  // asserting a random number (in thousands) between 5000 and 50000
-  private _getRandomAmount() {
-    const number = Math.floor(Math.random() * (50 - 5 + 1) + 5) * 1000;
-    return new Intl.NumberFormat('en-NG', {
-      style: 'currency',
-      currency: 'NGN',
-      maximumFractionDigits: 0
-    }).format(number);
-  }
+// asserting a random number (in thousands) between 5000 and 50000
+function _getRandomAmount() {
+  const number = Math.floor(Math.random() * (50 - 5 + 1) + 5) * 1000;
+  return new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+    maximumFractionDigits: 0
+  }).format(number);
 }
 
 export default EventModel;

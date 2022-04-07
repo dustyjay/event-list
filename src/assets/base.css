@@ -72,21 +72,21 @@
 
 @font-face {
   font-family: 'br-firma';
-  src: local("br-firma"), url('@/assets/fonts/br-firma/BR\ Firma\ Bold.otf');
+  src: local("br-firma"), url('@/assets/fonts/br-firma/BR Firma Bold.otf');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'br-firma';
-  src: local("br-firma"), url('@/assets/fonts/br-firma/BR\ Firma\ SemiBold.otf');
+  src: local("br-firma"), url('@/assets/fonts/br-firma/BR Firma SemiBold.otf');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'br-firma';
-  src: local("br-firma"), url('@/assets/fonts/br-firma/BR\ Firma\ Regular.otf');
+  src: local("br-firma"), url('@/assets/fonts/br-firma/BR Firma Regular.otf');
   font-weight: normal;
   font-style: normal;
 }

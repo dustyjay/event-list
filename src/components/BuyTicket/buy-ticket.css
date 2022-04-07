@@ -1,0 +1,16 @@
+.btn {
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 100ms linear;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+  color: var(--vt-c-white);
+}

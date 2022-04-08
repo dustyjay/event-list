@@ -3,6 +3,12 @@
   box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.02);
   border-radius: 10px;
   padding: 0.75rem;
+  transition: 300ms ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0px 2px 20px 5px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }
 
 .card-img {
@@ -17,7 +23,36 @@
   border-radius: 6px;
 }
 
+.card-img div {
+  background-image: url('@/assets/images/event-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.75rem;
+  justify-content: center;
+  color: var(--vt-c-white);
+  font-size: 26px;
+}
+
 .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-content.column>div {
+  margin-bottom: 10px;
+}
+
+.card-content.column {
+  flex-direction: column;
+  align-items: unset;
+}
+
+.card__details {
   display: flex;
   justify-content: space-between;
 }
@@ -76,13 +111,4 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-
-.card-row__with-btn.column>div {
-  margin-bottom: 10px;
-}
-
-.card-row__with-btn.column {
-  flex-direction: column;
-  align-items: flex-start;
 }

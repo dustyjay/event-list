@@ -31,7 +31,7 @@ export default defineComponent({
 
 <template>
   <main>
-    <section class="featured">
+    <section class="section">
       <h2 class="section-title">Featured Events</h2>
 
       <div class="section-content">
@@ -43,7 +43,7 @@ export default defineComponent({
         />
       </div>
     </section>
-    <section class="events">
+    <section class="section">
       <h2 class="section-title">Events</h2>
 
       <div class="section-content events">
@@ -63,7 +63,7 @@ export default defineComponent({
   font-weight: normal;
 }
 
-section {
+.section {
   margin-bottom: 1.5rem;
 }
 

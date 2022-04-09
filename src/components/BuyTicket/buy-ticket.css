@@ -1,7 +1,7 @@
 .btn {
   background-color: transparent;
-  border: 1px solid var(--blue);
-  color: var(--blue);
+  border: 1px solid var(--blue-2);
+  color: var(--blue-2);
   font-size: 14px;
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -11,6 +11,6 @@
 }
 
 .btn:hover {
-  background-color: var(--blue);
+  background-color: var(--blue-2);
   color: var(--vt-c-white);
 }

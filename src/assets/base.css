@@ -26,10 +26,14 @@
   --text-color: #6C757D;
   --text-dark: #2F2F2F;
 
-  --blue: #372AA4;
+  --blue-1: #EAEDF7;
+  --blue-2: #372AA4;
 
   --orange-1: rgba(255, 106, 44, 0.08);
   --orange-2: #FF6A2C;
+
+  --border-color: #E8E8E8;
+  --placeholder-color: #6C757D
 }
 
 /* semantic color variables for this project */

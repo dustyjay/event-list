@@ -102,7 +102,7 @@
 }
 
 .card-row__with-icon .price {
-  color: var(--blue);
+  color: var(--blue-2);
   font-size: 14px;
 }
 

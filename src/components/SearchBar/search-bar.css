@@ -1,0 +1,36 @@
+.search {
+  border: 1px solid var(--border-color);
+  background-color: var(--vt-c-white);
+  border-radius: 10px;
+  width: 100%;
+  line-height: 22px;
+  padding: 10px;
+  padding-left: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.search::-webkit-input-placeholder {
+  /* Edge */
+  color: var(--placeholder-color);
+}
+
+.search:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--placeholder-color);
+}
+
+.search::placeholder {
+  color: var(--placeholder-color);
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 423px;
+}
+
+.search-wrapper svg {
+  position: absolute;
+  left: 15px;
+  top: 14px;
+}

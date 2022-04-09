@@ -1,12 +1,17 @@
 .search {
   border: 1px solid var(--border-color);
-  background-color: var(--vt-c-white);
+  background-color: var(--white);
   border-radius: 10px;
   width: 100%;
   line-height: 22px;
   padding: 10px;
   padding-left: 2rem;
   margin-bottom: 2.5rem;
+}
+
+.search:focus {
+  border-color: var(--border-color);
+  outline: none;
 }
 
 .search::-webkit-input-placeholder {

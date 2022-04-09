@@ -1,11 +1,13 @@
 <script lang="ts">
-import EventCard from './components/EventCard/EventCard.vue';
 import { computed, defineComponent, onMounted, ref, watch } from 'vue';
+import EventCard from './components/EventCard/EventCard.vue';
 import EventModel from './models/event.model';
 import Loader from './components/Loader/Loader.vue';
 import Error from './components/Error/Error.vue';
 import SearchBar from './components/SearchBar/SearchBar.vue';
 import BerniceImage from './assets/images/bernice.png';
+// TODO :: add carousel
+// TODO :: add a few test scripts
 
 export default defineComponent({
   components: {
@@ -109,7 +111,7 @@ export default defineComponent({
       <section class="section">
         <h2 class="section-title">Featured Events</h2>
 
-        <div class="section-content">
+        <div class="section-content featured">
           <event-card
             v-for="(event, i) in featured"
             :key="i"
@@ -206,6 +208,10 @@ export default defineComponent({
   grid-auto-flow: unset;
   grid-auto-columns: minmax(250px, 1fr);
   overflow: unset;
+}
+
+.section-content.featured {
+  padding-bottom: 0.75rem;
 }
 
 .events-empty {

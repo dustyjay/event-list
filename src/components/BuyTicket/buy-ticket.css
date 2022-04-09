@@ -12,5 +12,5 @@
 
 .btn:hover {
   background-color: var(--blue-2);
-  color: var(--vt-c-white);
+  color: var(--white);
 }

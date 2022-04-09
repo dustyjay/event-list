@@ -1,5 +1,5 @@
 .card {
-  background: var(--vt-c-white);
+  background: var(--white);
   box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.02);
   border-radius: 10px;
   padding: 0.75rem;
@@ -33,7 +33,7 @@
   align-items: flex-end;
   padding-bottom: 0.75rem;
   justify-content: center;
-  color: var(--vt-c-white);
+  color: var(--white);
   font-size: 26px;
 }
 

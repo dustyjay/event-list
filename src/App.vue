@@ -7,8 +7,7 @@ import Loader from './components/Loader/Loader.vue';
 import Error from './components/Error/Error.vue';
 import SearchBar from './components/SearchBar/SearchBar.vue';
 import BerniceImage from './assets/images/bernice.png';
-// TODO :: add carousel
-// TODO :: add a few test scripts
+// TODO :: add some test scripts
 
 export default defineComponent({
   components: {
@@ -119,7 +118,12 @@ export default defineComponent({
             :options="{
               perPage: 2,
               gap: '1.5rem',
-              pagination: false
+              pagination: false,
+              breakpoints: {
+                640: {
+                  perPage: 1
+                }
+              }
             }"
           >
             <SplideSlide v-for="(event, i) in featured" :key="i">
@@ -129,7 +133,7 @@ export default defineComponent({
         </div>
       </section>
       <section class="section">
-        <h2 class="section-title">Events</h2>
+        <h2 class="section-title">All Events</h2>
 
         <div v-if="filteredItems.length" class="section-content events">
           <event-card
@@ -148,74 +152,6 @@ export default defineComponent({
 
 <style>
 @import '@splidejs/vue-splide/css';
-@import './assets/base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3.75rem;
-}
-
-.page-header h1 {
-  font-size: 2rem;
-}
-
-.user-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.user-data__image {
-  width: 38px;
-  height: 38px;
-  object-fit: cover;
-}
-
-.user-data__name {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 15px;
-}
-
-.user-data__icon {
-  padding: 6px;
-  background-color: var(--blue-1);
-  display: inline-flex;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.section {
-  margin-bottom: 1.5rem;
-}
-
-.section-title {
-  font-size: 16px;
-  margin-bottom: 1.25rem;
-}
-
-.section-content.events {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-flow: unset;
-  grid-auto-columns: minmax(250px, 1fr);
-}
-
-.events-empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 30vh;
-}
+@import url('./assets/base.css');
+@import url('./app.css');
 </style>

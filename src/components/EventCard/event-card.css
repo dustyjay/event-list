@@ -40,7 +40,7 @@
 .card-content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
 }
 
 .card-content.column>div {
@@ -55,6 +55,19 @@
 .card__details {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 540px) {
+  .card-content {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .card__details {
+    margin-bottom: 0;
+  }
+
 }
 
 .card-content__left {

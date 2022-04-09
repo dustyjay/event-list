@@ -1,5 +1,6 @@
 <script lang="ts">
 import { computed, defineComponent, onMounted, ref, watch } from 'vue';
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import EventCard from './components/EventCard/EventCard.vue';
 import EventModel from './models/event.model';
 import Loader from './components/Loader/Loader.vue';
@@ -14,7 +15,9 @@ export default defineComponent({
     EventCard,
     Loader,
     Error,
-    SearchBar
+    SearchBar,
+    Splide,
+    SplideSlide
   },
 
   setup() {
@@ -111,13 +114,18 @@ export default defineComponent({
       <section class="section">
         <h2 class="section-title">Featured Events</h2>
 
-        <div class="section-content featured">
-          <event-card
-            v-for="(event, i) in featured"
-            :key="i"
-            :event="event"
-            is-featured
-          />
+        <div>
+          <Splide
+            :options="{
+              perPage: 2,
+              gap: '1.5rem',
+              pagination: false
+            }"
+          >
+            <SplideSlide v-for="(event, i) in featured" :key="i">
+              <event-card :event="event" is-featured />
+            </SplideSlide>
+          </Splide>
         </div>
       </section>
       <section class="section">
@@ -139,6 +147,7 @@ export default defineComponent({
 </template>
 
 <style>
+@import '@splidejs/vue-splide/css';
 @import './assets/base.css';
 
 #app {
@@ -194,24 +203,12 @@ export default defineComponent({
   margin-bottom: 1.25rem;
 }
 
-.section-content {
+.section-content.events {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(524px, 1fr));
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(524px, 1fr);
-  overflow-x: auto;
-}
-
-.section-content.events {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-flow: unset;
   grid-auto-columns: minmax(250px, 1fr);
-  overflow: unset;
-}
-
-.section-content.featured {
-  padding-bottom: 0.75rem;
 }
 
 .events-empty {

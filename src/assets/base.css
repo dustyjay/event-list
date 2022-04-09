@@ -75,3 +75,33 @@ h6 {
   font-weight: bold;
   color: var(--text-dark)
 }
+
+/* SLIDE STYLING */
+.splide__arrow {
+  top: 120px !important;
+  transform: unset;
+  box-shadow: 0px 4px 10px rgba(36, 79, 190, 0.1);
+  background-color: var(--white);
+  padding: 10px;
+  opacity: 1;
+  width: unset;
+  height: unset;
+}
+
+.splide__arrow:disabled {
+  display: none;
+}
+
+.splide__arrow svg {
+  width: 11px;
+  height: 11px;
+  fill: var(--blue-2)
+}
+
+.splide__arrow--prev {
+  left: -1rem
+}
+
+.splide__arrow--next {
+  right: -1rem
+}

@@ -31,7 +31,7 @@
                 />
               </svg>
 
-              Location
+              {{ event.venue.location }}
             </div>
             <div v-if="isFeatured" class="card-row__with-icon">
               <svg

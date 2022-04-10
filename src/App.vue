@@ -7,7 +7,6 @@ import Loader from './components/Loader/Loader.vue';
 import Error from './components/Error/Error.vue';
 import SearchBar from './components/SearchBar/SearchBar.vue';
 import BerniceImage from './assets/images/bernice.png';
-// TODO :: add some test scripts
 
 export default defineComponent({
   components: {
@@ -26,12 +25,22 @@ export default defineComponent({
     const filteredItems = ref([] as EventModel[]);
     const search = ref('');
     const userData = ref({ name: 'Bernice', image: BerniceImage });
+    const sliderOptions = ref({
+      perPage: 2,
+      gap: '1.5rem',
+      pagination: false,
+      breakpoints: {
+        640: {
+          perPage: 1
+        }
+      }
+    });
+
     const featured = computed(() => {
       return allListItems.value.slice(0, 5);
     });
 
     const formatEventItem = (ev: any) => new EventModel(ev);
-
     const fetchEventList = async () => {
       hasError.value = false;
       try {
@@ -48,7 +57,6 @@ export default defineComponent({
         loading.value = false;
       }
     };
-
     const handleSearch = () => {
       filteredItems.value = allListItems.value.filter(i => {
         const searchStr = search.value.toLowerCase();
@@ -74,7 +82,8 @@ export default defineComponent({
       search,
       filteredItems,
       featured,
-      userData
+      userData,
+      sliderOptions
     };
   }
 });
@@ -110,22 +119,11 @@ export default defineComponent({
       <section>
         <search-bar v-model="search" />
       </section>
-      <section class="section">
+      <section class="section is-featured">
         <h2 class="section-title">Featured Events</h2>
 
         <div>
-          <Splide
-            :options="{
-              perPage: 2,
-              gap: '1.5rem',
-              pagination: false,
-              breakpoints: {
-                640: {
-                  perPage: 1
-                }
-              }
-            }"
-          >
+          <Splide :options="sliderOptions">
             <SplideSlide v-for="(event, i) in featured" :key="i">
               <event-card :event="event" is-featured />
             </SplideSlide>
